@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 import './css/reset.css';
+import './css/fonts.css';
 
 ReactDOM.render(
   <h1> The answer is 42 </h1>,
