@@ -4,7 +4,7 @@ import { Provider as StyletronProvider } from 'styletron-react';
 import { Client as Styletron } from 'styletron-engine-atomic';
 import * as serviceWorker from './serviceWorker';
 
-import Home from './pages/Home';
+import Home from 'app/pages/Home';
 
 // styles
 import './css/reset.css';
