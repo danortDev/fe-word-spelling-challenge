@@ -1320,12 +1320,17 @@
     "@types/react" "*"
     "@types/styletron-standard" "*"
 
-"@types/styletron-standard@*", "@types/styletron-standard@^2.0.0":
+"@types/styletron-standard@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/styletron-standard/-/styletron-standard-2.0.0.tgz#fff4c89cb2cb1f6cc48699188fcea31a02191052"
   integrity sha512-TCNFfgWmGLyuthLVl55Bvw6xjdflrtJ43+CIB+UfumLDRDFdANPB5fnMP/gahepI/QUaLI0nVuZYfNq/MTCjdQ==
   dependencies:
     csstype "^2.6.4"
+
+"@types/tinycolor2@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@types/tinycolor2/-/tinycolor2-1.4.2.tgz#721ca5c5d1a2988b4a886e35c2ffc5735b6afbdf"
+  integrity sha512-PeHg/AtdW6aaIO2a+98Xj7rWY4KC1E6yOy7AFknJQ7VXUGNrMlyxDFxJo7HqLtjQms/ZhhQX52mLVW/EX3JGOw==
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
