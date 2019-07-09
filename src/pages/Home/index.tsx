@@ -1,31 +1,20 @@
 import React from 'react';
+import { useChallengeContext } from 'app/contexts/Challenge';
 import AppBar from 'app/components/ui/AppBar';
-import Button from 'app/components/ui/Button';
-import Word from 'app/components/ui/Word';
-import WordPronunciationButton from 'app/components/challenge/WordPronunciationButton';
-import { MainContainer, ChallengeWrapper, Card, Actions } from './elements';
+import Exercise from 'app/components/challenge/Exercise';
+import { MainContainer } from './elements';
 
-const Home = () => (
-  <div>
-    <AppBar />
-    <MainContainer>
-      <ChallengeWrapper>
-        <Card>
-          <Word />
-          <WordPronunciationButton
-            word="bazinga"
-          />
-        </Card>
-        <Actions>
-          <Button
-            fullWidth
-            text="Review"
-            onClick={() => {}}
-          />
-        </Actions>
-      </ChallengeWrapper>
-    </MainContainer>
-  </div>
-);
+const Home = () => {
+  const [{ currentExercise }] = useChallengeContext();
+
+  return (
+    <div>
+      <AppBar />
+      <MainContainer>
+        <Exercise exercise={currentExercise} />
+      </MainContainer>
+    </div>
+  );
+};
 
 export default Home;

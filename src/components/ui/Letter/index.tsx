@@ -1,14 +1,25 @@
 import React, { FunctionComponent } from 'react';
+
 import { Container } from './elements';
 
 interface Props {
-  letter?: string;
+  letter: string;
+  color?: string,
+  background?: string,
+  borderColor?: string
 }
 
 const Letter: FunctionComponent<Props> = ({
-  letter = 'B'
+  letter,
+  color,
+  background,
+  borderColor
 }) => (
-  <Container>
+  <Container
+    $color={color}
+    $background={background}
+    $borderColor={borderColor}
+  >
     { letter }
   </Container>
 );

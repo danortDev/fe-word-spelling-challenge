@@ -8,7 +8,7 @@ interface Props {
 
 const DEFAULT_LANGUAGE = 'en-US';
 
-const WordPronunciationButton: FunctionComponent<Props> = ({
+const UtterButton: FunctionComponent<Props> = ({
   word
 }) => {
   if (!word) return null;
@@ -38,4 +38,4 @@ const WordPronunciationButton: FunctionComponent<Props> = ({
   )
 };
 
-export default WordPronunciationButton;
+export default UtterButton;
