@@ -16,7 +16,7 @@ const COLOURS: Colours = {
 };
 
 const getColor = (colorName: string) => {
-  const color = COLOURS[colorName] || COLOURS['PRIMARY'];
+  const color = COLOURS[colorName.toUpperCase()] || COLOURS['PRIMARY'];
   return tinycolor(color).clone();
 };
 
