@@ -6,7 +6,7 @@ import DraggableWord from 'app/components/challenge/DraggableWord';
 import UtterButton from 'app/components/challenge/UtterButton';
 import { ExerciseWrapper, Card, Actions } from './elements';
 import reorderArray from 'app/utils/reorderArray';
-
+import getMisplacedLetters from 'app/utils/getMisplacedLetters'
 interface Props {
   exercise: ExerciseInterface
 }
@@ -46,17 +46,9 @@ const Exercise: FunctionComponent<Props> = ({
     if (answer === exercise.answer) {
       console.log('success');
     } else {
-      const invalidIndexes = letters.reduce((
-        invalidPositions: number[],
-        currentIndex,
-        index
-      ) => {
-        return currentIndex !== exercise.answer[index]
-          ? [...invalidPositions, index]
-          : invalidPositions;
-      }, []);
-
-      setMisplacedLetters(invalidIndexes);
+      setMisplacedLetters(
+        getMisplacedLetters(letters, exercise.answer)
+      );
     }
   }
 
