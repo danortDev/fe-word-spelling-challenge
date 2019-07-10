@@ -28,6 +28,21 @@ Then you can run
   yarn start
 ```
 
+## Dependencies
+This project use some cool libraries:
+- `styletron-react` to handle CSS in JS. I think this makes the styles more
+maintainable.
+and allows you perform some cool computations on styles.
+- `tinycolor2` one of the things that gets hard to maintain in the front-end
+(if you don't pay enough attention to it) is the color palette. Tinycolor allows
+you to keep a consistent palette and perform computations on colors for those
+uncommon variations.
+- `react-beutiful-dnd` its a pretty cool drag and drop library from attlasian.
+
+## Know issues
+ - Large words overflows the screen in mobile. Din't had enough time to find a fix.
+ A temporal work around could be to restrict the length of the strings in the api.
+
 ## Available Scripts
 
 ### `npm start`
