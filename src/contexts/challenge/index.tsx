@@ -9,13 +9,15 @@ export interface Exercise {
 const initialState = {
   exercises: [
     { word: 'welcome', scrambled: 'wlcmeoe' },
+    { word: 'golda', scrambled: 'gldoa' },
     { word: 'bye', scrambled: 'ybe' }
   ],
   currentExercise: {
+    index: 0,
     word: 'welcome',
-    scrambled: 'wlcmeoe',
-    answer: 'welcome'
-  }
+    scrambled: 'wlcmeoe'
+  },
+  solved: false
 };
 
 const ChallengeContext = React.createContext({});

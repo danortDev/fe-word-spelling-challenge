@@ -1,10 +1,10 @@
-const getMisplacedLetters = (letters: string[], answer: string) =>
+const getMisplacedLetters = (letters: string[], word: string) =>
   letters.reduce((
     invalidPositions: number[],
     currentIndex,
     index
   ) => {
-    return currentIndex !== answer[index]
+    return currentIndex !== word[index]
       ? [...invalidPositions, index]
       : invalidPositions;
   }, []);

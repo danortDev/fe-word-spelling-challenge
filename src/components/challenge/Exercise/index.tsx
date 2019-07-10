@@ -1,12 +1,14 @@
 import React, { useState, useEffect, FunctionComponent } from 'react';
 import { DropResult } from 'react-beautiful-dnd';
 import Button from 'app/components/ui/Button';
-import { Exercise as ExerciseInterface } from 'app/contexts/Challenge';
 import DraggableWord from 'app/components/challenge/DraggableWord';
 import UtterButton from 'app/components/challenge/UtterButton';
+import { Exercise as ExerciseInterface } from 'app/contexts/challenge';
 import { ExerciseWrapper, Card, Actions } from './elements';
+import { useMoveNext } from 'app/contexts/challenge/actions';
 import reorderArray from 'app/utils/reorderArray';
 import getMisplacedLetters from 'app/utils/getMisplacedLetters'
+
 interface Props {
   exercise: ExerciseInterface
 }
@@ -14,16 +16,25 @@ interface Props {
 const Exercise: FunctionComponent<Props> = ({
   exercise
 }) => {
-  const [letters, setLetters] = useState<string[]>([]);
+  const [letters, setLetters] = useState<string[]>(
+    exercise.scrambled.split("")
+  );
+  const [solved, setSolved] = useState<boolean>(false);
   const [misplacedLetters, setMisplacedLetters] = useState<number[]>([]);
+  const moveNext = useMoveNext();
 
   useEffect(() => {
     if (exercise && exercise.scrambled) {
-      setLetters(exercise.scrambled.split(""))
+      setLetters(exercise.scrambled.split(""));
     }
   }, [exercise]);
 
-  if (!exercise || !exercise.word) return null;
+  useEffect(() => {
+    if (solved) {
+      setSolved(false);
+      moveNext();
+    }
+  }, [solved, moveNext]);
 
   const onDragStart = () => {
     setMisplacedLetters([]);
@@ -43,19 +54,20 @@ const Exercise: FunctionComponent<Props> = ({
 
   const reviewAnswer = () => {
     const answer = letters.join("");
-    if (answer === exercise.answer) {
-      console.log('success');
+    if (answer === exercise.word) {
+      setSolved(true);
     } else {
       setMisplacedLetters(
-        getMisplacedLetters(letters, exercise.answer)
+        getMisplacedLetters(letters, exercise.word)
       );
     }
   }
 
-  const displayHit = !!misplacedLetters.length;
+  const displayHint = !!misplacedLetters.length;
 
   return (
     <ExerciseWrapper>
+      <h1> Drag and Drop the letters until to make the right word</h1>
       <Card>
         <DraggableWord
           letters={letters}
@@ -65,7 +77,7 @@ const Exercise: FunctionComponent<Props> = ({
         />
         <UtterButton word={exercise.word} />
       </Card>
-      {displayHit && (
+      {displayHint && (
         <p> Try moving the highligthed letters! </p>
       )}
       <Actions>

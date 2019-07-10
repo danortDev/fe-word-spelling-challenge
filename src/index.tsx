@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ChallengeProvider } from 'app/contexts/Challenge';
+import { ChallengeProvider } from 'app/contexts/challenge';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { Client as Styletron } from 'styletron-engine-atomic';
 import * as serviceWorker from './serviceWorker';
