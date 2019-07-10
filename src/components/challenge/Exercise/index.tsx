@@ -70,21 +70,20 @@ const Exercise: FunctionComponent<Props> = ({
             misplacedLetters={misplacedLetters}
           />
         </Elements.WordWrapper>
-        <Elements.Title>
+        <Elements.Instructions>
           Drag and Drop the letters to unscramble the word
-        </Elements.Title>
+        </Elements.Instructions>
       </Elements.Card>
       <Elements.BottomBar>
         {displayHint && (
           <Elements.Hint>
-            Ops! Something doesn't seems right,
-            try moving the highligthed letters!
+            Oops! Something doesn't seems right...
           </Elements.Hint>
         )}
         {solved && (
           <Elements.Success>
             Correct!! that is the right answer,
-            Click continue to keep going
+            Click continue to keep going!!
           </Elements.Success>
         )}
         {!solved && (

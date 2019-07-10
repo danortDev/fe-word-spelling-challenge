@@ -6,13 +6,12 @@ export const Container = styled('nav', {
   height: APP_BAR_HEIGHT,
   display: 'flex',
   alignItems: 'center',
-  fontSize: '16px',
   color: `${getColor('WHITE')}`,
   background: `${getColor('PRIMARY')}`
 });
 
 export const Title = styled('h1', {
-  fontSize: '16px',
+  fontSize: '18px',
   marginLeft: '20px',
   fontWeigth: '500',
 });

@@ -34,6 +34,11 @@ export const Container = styled('div', ({
       border: `2px solid ${getColor('Primary')}`,
       color: getColor('WHITE').toHexString(),
       background: getColor('PRIMARY').toHexString()
+    },
+    '@media screen and (max-width: 600px)': {
+      width: '30px',
+      height: '30px',
+      fontSize: '14px'
     }
   }
 });

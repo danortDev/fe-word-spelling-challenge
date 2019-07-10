@@ -13,9 +13,9 @@ const draggingModifiers = {
 };
 
 const highlightedModifiers = {
-  color: getColor('GREY').darken(20).toHexString(),
-  background: getColor('LIGHTGREY').toHexString(),
-  borderColor: getColor('GREY').darken(20).toHexString(),
+  color: getColor('RED').toHexString(),
+  background: getColor('WHITE').toHexString(),
+  borderColor: getColor('RED').toHexString(),
 };
 
 const defaultModifiers = {
