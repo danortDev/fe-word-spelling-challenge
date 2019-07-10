@@ -75,7 +75,7 @@ const Exercise: FunctionComponent<Props> = ({
       <Elements.BottomBar>
         {displayHint && (
           <Elements.Hint>
-            Oops! Something doesn't seems right...
+            Oops! Something doesn't seem right...
           </Elements.Hint>
         )}
         {solved && (
