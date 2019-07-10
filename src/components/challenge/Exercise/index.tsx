@@ -4,10 +4,10 @@ import Button from 'app/components/ui/Button';
 import DraggableWord from 'app/components/challenge/DraggableWord';
 import UtterButton from 'app/components/challenge/UtterButton';
 import { Exercise as ExerciseInterface } from 'app/contexts/challenge';
-import { ExerciseWrapper, Card, Actions } from './elements';
 import { useMoveNext } from 'app/contexts/challenge/actions';
 import reorderArray from 'app/utils/reorderArray';
-import getMisplacedLetters from 'app/utils/getMisplacedLetters'
+import getMisplacedLetters from 'app/utils/getMisplacedLetters';
+import * as Elements from './elements';
 
 interface Props {
   exercise: ExerciseInterface
@@ -24,17 +24,11 @@ const Exercise: FunctionComponent<Props> = ({
   const moveNext = useMoveNext();
 
   useEffect(() => {
+    setSolved(false);
     if (exercise && exercise.scrambled) {
       setLetters(exercise.scrambled.split(""));
     }
   }, [exercise]);
-
-  useEffect(() => {
-    if (solved) {
-      setSolved(false);
-      moveNext();
-    }
-  }, [solved, moveNext]);
 
   const onDragStart = () => {
     setMisplacedLetters([]);
@@ -48,7 +42,6 @@ const Exercise: FunctionComponent<Props> = ({
       source.index,
       destination.index
     );
-
     setLetters(reorderedLetters as string[]);
   };
 
@@ -66,28 +59,48 @@ const Exercise: FunctionComponent<Props> = ({
   const displayHint = !!misplacedLetters.length;
 
   return (
-    <ExerciseWrapper>
-      <h1> Drag and Drop the letters until to make the right word</h1>
-      <Card>
-        <DraggableWord
-          letters={letters}
-          onDragStart={onDragStart}
-          onDragEnd={onDragEnd}
-          misplacedLetters={misplacedLetters}
-        />
+    <Elements.ExerciseWrapper>
+      <Elements.Card>
         <UtterButton word={exercise.word} />
-      </Card>
-      {displayHint && (
-        <p> Try moving the highligthed letters! </p>
-      )}
-      <Actions>
-        <Button
-          fullWidth
-          text="Review"
-          onClick={reviewAnswer}
-        />
-      </Actions>
-    </ExerciseWrapper>
+        <Elements.WordWrapper>
+          <DraggableWord
+            letters={letters}
+            onDragStart={onDragStart}
+            onDragEnd={onDragEnd}
+            misplacedLetters={misplacedLetters}
+          />
+        </Elements.WordWrapper>
+        <Elements.Title>
+          Drag and Drop the letters to unscramble the word
+        </Elements.Title>
+      </Elements.Card>
+      <Elements.BottomBar>
+        {displayHint && (
+          <Elements.Hint>
+            Ops! Something doesn't seems right,
+            try moving the highligthed letters!
+          </Elements.Hint>
+        )}
+        {solved && (
+          <Elements.Success>
+            Correct!! that is the right answer,
+            Click continue to keep going
+          </Elements.Success>
+        )}
+        {!solved && (
+          <Button
+            text="Review"
+            onClick={reviewAnswer}
+          />
+        )}
+        {solved && (
+          <Button
+            text="Continue"
+            onClick={moveNext}
+          />
+        )}
+      </Elements.BottomBar>
+    </Elements.ExerciseWrapper>
   );
 };
 

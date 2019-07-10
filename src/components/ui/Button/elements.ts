@@ -28,6 +28,8 @@ export const Container = styled('div', ({
   fontWeigth: '100',
   color: `${getColor('WHITE')}`,
   background: `${getColor('PRIMARY')}`,
+  borderRadius: '100px',
+  border: `1px solid`,
   ':hover': {
     boxShadow: `0px 0px 0px 4px ${getColor('PRIMARY').setAlpha(0.40)}`
   },
