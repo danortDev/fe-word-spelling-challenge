@@ -39,6 +39,9 @@ you to keep a consistent palette and perform computations on colors for those
 uncommon variations.
 - `react-beutiful-dnd` its a pretty cool drag and drop library from attlasian.
 
+## Limitations
+- This app use the SpeechSynthesis API, so it only targets modern browsers. You can check a list of supported browsers [here](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
+
 ## Know issues
  - Large words overflows the screen in mobile. Din't had enough time to find a fix.
  A temporal work around could be to restrict the length of the strings in the api.
