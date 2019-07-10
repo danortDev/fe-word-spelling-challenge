@@ -1,3 +1,4 @@
+import { getChallenge } from 'app/client';
 import { useChallengeContext } from "./";
 
 export const useMoveNext = () => {
@@ -17,4 +18,24 @@ export const useMoveNext = () => {
       solved: challengeSolved
     });
   }
+};
+
+export const useGetChallenge = () => {
+  const [challenge, setChallenge] = useChallengeContext();
+  return async() => {
+    setChallenge({ ...challenge, loading: true });
+    try {
+      const exercises = await getChallenge();
+      setChallenge({
+        exercises,
+        currentExercise: exercises[0],
+        currentIndex: 0,
+        solved: false,
+        loading: false,
+        error: false
+      });
+    } catch (error) {
+      setChallenge({ ...challenge, loading: false, error: error });
+    }
+  };
 };
