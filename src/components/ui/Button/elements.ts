@@ -14,7 +14,7 @@ const iconButtonStyles = {
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: '50%',
-  fill: `${getColor('WHITE')}`
+  fill: getColor('WHITE').toHexString()
 };
 
 export const Container = styled('div', ({
@@ -26,8 +26,8 @@ export const Container = styled('div', ({
   width: $fullWidth ? '100%' : 'max-content',
   padding: '20px',
   fontWeigth: '100',
-  color: `${getColor('WHITE')}`,
-  background: `${getColor('PRIMARY')}`,
+  color: getColor('WHITE').toHexString(),
+  background: getColor('PRIMARY').toHexString(),
   borderRadius: '100px',
   border: `1px solid`,
   ':hover': {

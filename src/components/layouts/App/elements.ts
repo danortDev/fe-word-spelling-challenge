@@ -7,6 +7,6 @@ export const MainContainer = styled('main', {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  background: `${getColor('LIGHTGREY')}`,
+  background: getColor('LIGHTGREY').toHexString(),
   minHeight: `calc(100vh - ${APP_BAR_HEIGHT})`
 });

@@ -6,8 +6,8 @@ export const Container = styled('nav', {
   height: APP_BAR_HEIGHT,
   display: 'flex',
   alignItems: 'center',
-  color: `${getColor('WHITE')}`,
-  background: `${getColor('PRIMARY')}`
+  color: getColor('WHITE').toHexString(),
+  background: getColor('PRIMARY').toHexString()
 });
 
 export const Title = styled('h1', {

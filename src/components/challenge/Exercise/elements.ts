@@ -26,7 +26,7 @@ export const Card = styled('section', {
   alignItems: 'center',
   padding: '40px',
   borderRadius: '4px',
-  background: `${getColor('WHITE')}`,
+  background: getColor('WHITE').toHexString(),
   boxShadow: `2px 2px 6px 0px ${getColor('BLACK').setAlpha(0.54)}`,
   '@media screen and (max-width: 700px)': {
     boxShadow: 'none',

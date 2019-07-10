@@ -8,7 +8,7 @@ export const Overlay = styled('div', {
   right: 0,
   bottom: 0,
   left: 0,
-  background: `${getColor('BLACK').setAlpha(.8)}`,
+  background: getColor('BLACK').setAlpha(.8).toHexString(),
   zIndex: 10
 });
 
