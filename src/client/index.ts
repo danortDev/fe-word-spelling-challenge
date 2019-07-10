@@ -1,9 +1,9 @@
 import 'fetch-everywhere';
-const BASE_URL = 'http://localhost:4000/api/v1';
 
 export const getChallenge = async() => {
   try {
-    const response = await fetch(`${BASE_URL}/exercises`);
+    const baseUrl = process.env.REACT_APP_API_BASE_URL;
+    const response = await fetch(`${baseUrl}/exercises`);
     return successHandler(response);
   } catch (error) {
     errorHandler(error);
