@@ -4,11 +4,8 @@ import { CONTENT_WRAPPER_WIDTH } from 'app/constants/styles';
 
 export const ExerciseWrapper = styled('div', {
   width: CONTENT_WRAPPER_WIDTH,
-  '@media screen and (max-width: 550px)': {
+  '@media screen and (max-width: 700px)': {
     width: '100%'
-  },
-  '@media screen and (max-width: 860px) and (min-width: 550px)': {
-    width: '80%'
   }
 });
 
@@ -17,7 +14,7 @@ export const Instructions = styled('h1', {
   marginBottom: '40px',
   textAlign: 'center',
   color: getColor('TEXT_SECONDARY').toHexString(),
-  '@media screen and (max-width: 600px)': {
+  '@media screen and (max-width: 700px)': {
     fontSize: '16px',
     marginBottom: 0
   }
@@ -31,7 +28,7 @@ export const Card = styled('section', {
   borderRadius: '4px',
   background: `${getColor('WHITE')}`,
   boxShadow: `2px 2px 6px 0px ${getColor('BLACK').setAlpha(0.54)}`,
-  '@media screen and (max-width: 600px)': {
+  '@media screen and (max-width: 700px)': {
     boxShadow: 'none',
     background: getColor('LIGHTGREY').toHexString(),
   }
@@ -49,7 +46,7 @@ export const BottomBar = styled('div', {
   alignItems: 'center',
   justifyContent: 'flex-end',
   marginTop: '20px',
-  '@media screen and (max-width: 600px)': {
+  '@media screen and (max-width: 700px)': {
     flexDirection: 'column'
   }
 });
@@ -57,8 +54,8 @@ export const BottomBar = styled('div', {
 const noticeBoxStyles = {
   marginRight: '20px',
   textAlign: 'center' as 'center',
-  '@media screen and (max-width: 600px)': {
-    margin: '0 0 40px 0',
+  '@media screen and (max-width: 700px)': {
+    padding: '0 20px 40px'
   }
 }
 

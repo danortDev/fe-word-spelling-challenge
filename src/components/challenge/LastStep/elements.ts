@@ -18,5 +18,6 @@ export const Container = styled('div', {
 export const Title = styled('h1', {
   fontSize: '36px',
   marginBottom: '40px',
+  textAlign: 'center',
   color: getColor('PRIMARY').toHexString()
 });

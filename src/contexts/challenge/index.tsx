@@ -2,22 +2,16 @@ import React, { useContext, useState, useMemo, FunctionComponent } from 'react';
 
 export interface Exercise {
   word: string,
-  scrambled: string,
-  answer: string
+  scrambled: string
 }
 
 const initialState = {
-  exercises: [
-    { word: 'welcome', scrambled: 'wlcmeoe' },
-    { word: 'golda', scrambled: 'gldoa' },
-    { word: 'bye', scrambled: 'ybe' }
-  ],
-  currentExercise: {
-    word: 'welcome',
-    scrambled: 'wlcmeoe'
-  },
+  exercises: [],
+  currentExercise: {},
   currentIndex: 0,
-  solved: false
+  solved: false,
+  loading: true,
+  error: false
 };
 
 const ChallengeContext = React.createContext({});

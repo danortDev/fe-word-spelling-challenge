@@ -16,9 +16,7 @@ interface Props {
 const Exercise: FunctionComponent<Props> = ({
   exercise
 }) => {
-  const [letters, setLetters] = useState<string[]>(
-    exercise.scrambled.split("")
-  );
+  const [letters, setLetters] = useState<string[]>([]);
   const [solved, setSolved] = useState<boolean>(false);
   const [misplacedLetters, setMisplacedLetters] = useState<number[]>([]);
   const moveNext = useMoveNext();
