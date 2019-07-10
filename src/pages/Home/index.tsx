@@ -14,9 +14,7 @@ const Home = () => {
   const getChallenge = useGetChallenge();
 
   useEffect(() => {
-    console.log('I am here');
     if (!mounted) {
-      console.log('I am making the request');
       setMounted(true);
       getChallenge();
     }
