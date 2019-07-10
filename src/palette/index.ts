@@ -13,8 +13,9 @@ const COLOURS: Colours = {
   LIGHTGREY: '#F8F9Fa',
   BLACK: '#000000',
   WHITE: '#FFFFFF',
-  RED: '#90323d',
-  GREEN: '#71B340'
+  RED: '#ED6A5A',
+  GREEN: '#71B340',
+  BLUE: '#587792'
 };
 
 const getColor = (colorName: string) => {

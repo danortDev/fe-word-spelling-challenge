@@ -13,10 +13,10 @@ const initialState = {
     { word: 'bye', scrambled: 'ybe' }
   ],
   currentExercise: {
-    index: 0,
     word: 'welcome',
     scrambled: 'wlcmeoe'
   },
+  currentIndex: 0,
   solved: false
 };
 
